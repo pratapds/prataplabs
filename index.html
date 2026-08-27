@@ -1,40 +1,599 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Pratap Labs — Data Science, Machine Learning, Artificial Intelligence, Analytics and Research. Decoding Life, Mind & Business.">
-<title>Pratap Labs — Decoding Life, Mind & Business</title>
-<style>
-:root{--navy:#102a43;--blue:#1f6feb;--teal:#0ea5a0;--ink:#17324d;--muted:#5c6f82;--line:#dfe8f1;--soft:#f5f9fc;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.6;background:#fff}a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.04em;color:var(--navy)}.mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--blue) 60%,var(--teal));color:#fff;display:grid;place-items:center;font-weight:900}.links{display:flex;gap:22px;color:var(--muted);font-size:.95rem}
-.hero{padding:88px 0 70px;background:radial-gradient(circle at 86% 20%,rgba(14,165,160,.10),transparent 25%),radial-gradient(circle at 74% 42%,rgba(31,111,235,.10),transparent 28%),linear-gradient(180deg,#fff,#f8fbfe)}.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:48px;align-items:center}.eyebrow{font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}h1{font-size:clamp(3rem,7vw,5.5rem);line-height:.95;margin:0;color:var(--navy);letter-spacing:-.045em}.tag{font-size:clamp(1.25rem,2.5vw,2rem);margin:18px 0;color:var(--blue);font-weight:750}.lead{font-size:1.08rem;color:var(--muted);max-width:760px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:12px 17px;border-radius:11px;border:1px solid var(--line);font-weight:750}.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.secondary:hover{border-color:var(--blue);color:var(--blue)}
-.hero-card{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 18px 50px rgba(22,50,77,.08)}.hero-card h3{margin:0 0 14px;color:var(--navy)}.signal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.pill{min-height:100px;border:1px solid var(--line);background:var(--soft);border-radius:15px;padding:15px;display:flex;flex-direction:column;justify-content:space-between}.pill strong{color:var(--navy)}.pill small{color:var(--muted)}
-section{padding:72px 0}.soft{background:var(--soft)}.section-head{max-width:800px;margin-bottom:30px}.section-head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.1;color:var(--navy);margin:0 0 10px}.section-head p{margin:0;color:var(--muted);font-size:1.04rem}.caps{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.cap{padding:15px;border:1px solid var(--line);border-radius:13px;background:#fff;font-weight:700;color:var(--navy)}
-.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.step{border:1px solid var(--line);border-radius:13px;padding:15px;min-height:126px}.step span{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-size:.8rem;font-weight:800;margin-bottom:10px}.step strong{display:block;color:var(--navy);font-size:.93rem}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{border:1px solid var(--line);border-radius:17px;padding:22px;background:#fff}.card h3{margin:0 0 8px;color:var(--navy)}.card p{margin:0;color:var(--muted)}
-.founder{display:grid;grid-template-columns:.75fr 1.25fr;gap:28px}.founder-box{background:var(--navy);color:#fff;border-radius:20px;padding:26px}.founder-box h3{margin:0 0 5px}.founder-box p{margin:0;color:#cfe0ef}.founder-copy p{color:var(--muted)}.quote{border-left:4px solid var(--teal);padding:15px 18px;background:var(--soft);border-radius:0 13px 13px 0;color:var(--navy);font-weight:700}
-.contact{background:linear-gradient(135deg,var(--navy),#183f67);color:#fff}.contact p{color:#d8e6f3;max-width:760px}.contact .primary{background:#fff;color:var(--navy);border-color:#fff}footer{padding:22px 0;background:var(--navy);color:#bed0e0}.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-@media(max-width:900px){.links{display:none}.hero-grid,.founder{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.caps{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:620px){.grid,.caps,.steps{grid-template-columns:1fr}.hero{padding-top:64px}h1{font-size:3.1rem}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Pratap Labs is an independent Data Science, Machine Learning, Artificial Intelligence, Business Analysis and research initiative — solving complex business problems today, and pursuing a long-term research vision spanning the brain, biological and cellular systems, and a data-driven Happiness Index for human well-being.">
+  <meta name="theme-color" content="#0B132B">
+  <meta property="og:title" content="Pratap Labs — Decoding Life, Mind & Business">
+  <meta property="og:description" content="Data Science, Machine Learning, AI, Business Analysis, Decision Intelligence and interdisciplinary Research into brain, cell and happiness.">
+  <meta property="og:type" content="website">
+  <title>Pratap Labs | Data Science, AI, Business Analysis & Research</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#0B132B;
+      --navy-2:#111C3A;
+      --blue:#2563EB;
+      --teal:#14B8A6;
+      --ink:#172033;
+      --muted:#617085;
+      --line:#DCE3EA;
+      --soft:#F6F8FB;
+      --soft-2:#EEF3F8;
+      --white:#FFFFFF;
+      --shadow:0 20px 60px rgba(11,19,43,.10);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    h1,h2,h3,.brand{font-family:"Manrope","Inter",sans-serif}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+
+    /* NAV */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(220,227,234,.85);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      min-height:74px;
+    }
+    .brand{
+      font-weight:800;letter-spacing:.02em;color:var(--navy);
+      font-size:1.05rem;
+    }
+    .brand span{color:var(--teal)}
+    nav{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:.94rem}
+    nav a:hover{color:var(--navy)}
+    .nav-cta{
+      padding:10px 15px;border-radius:999px;
+      background:var(--navy);color:#fff;font-weight:700;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 84% 18%,rgba(37,99,235,.10),transparent 24%),
+        radial-gradient(circle at 74% 46%,rgba(20,184,166,.10),transparent 25%),
+        linear-gradient(180deg,#FFFFFF 0%,#F8FAFD 100%);
+      padding:112px 0 92px;
+    }
+    .hero:after{
+      content:"";position:absolute;right:-140px;bottom:-140px;
+      width:520px;height:520px;border-radius:50%;
+      border:1px solid rgba(37,99,235,.09);
+      box-shadow:
+        0 0 0 60px rgba(37,99,235,.025),
+        0 0 0 120px rgba(20,184,166,.02);
+    }
+    .hero-grid{
+      position:relative;z-index:1;
+      display:grid;grid-template-columns:1.18fr .82fr;gap:70px;align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;gap:8px;align-items:center;
+      text-transform:uppercase;letter-spacing:.14em;
+      font-size:.76rem;font-weight:800;color:var(--blue);
+      margin-bottom:18px;
+    }
+    .eyebrow:before{
+      content:"";width:28px;height:2px;background:var(--teal);border-radius:2px
+    }
+    h1{
+      margin:0;
+      font-size:clamp(3.6rem,7vw,6.5rem);
+      line-height:.96;letter-spacing:-.055em;
+      color:var(--navy);
+      max-width:900px;
+    }
+    .hero-highlight{color:var(--blue)}
+    .hero-sub{
+      margin:26px 0 0;
+      max-width:780px;
+      font-size:1.12rem;
+      color:var(--muted);
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 18px;border-radius:12px;
+      font-weight:700;border:1px solid var(--line);
+      transition:.2s ease;
+    }
+    .btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .btn.primary:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(11,19,43,.18)}
+    .btn.secondary:hover{border-color:var(--blue);color:var(--blue)}
+
+    .hero-card{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+    .hero-card .label{
+      font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;
+      color:var(--teal);font-weight:800;
+    }
+    .hero-card h3{
+      margin:10px 0 18px;
+      color:var(--navy);font-size:1.5rem;line-height:1.25
+    }
+    .focus{display:grid;gap:10px}
+    .focus-row{
+      display:grid;grid-template-columns:125px 1fr;gap:16px;
+      padding-top:13px;border-top:1px solid var(--line);
+    }
+    .focus-row strong{color:var(--navy)}
+    .focus-row span{color:var(--muted);font-size:.92rem}
+
+    /* PROOF STRIP */
+    .proof-strip{background:var(--navy);color:#fff}
+    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .proof{
+      padding:24px 20px;border-right:1px solid rgba(255,255,255,.10);
+    }
+    .proof:last-child{border-right:none}
+    .proof strong{display:block;font-size:1.05rem}
+    .proof span{display:block;color:#B7C3D3;font-size:.9rem;margin-top:3px}
+
+    section{padding:92px 0}
+    .section-head{max-width:850px;margin-bottom:38px}
+    .kicker{
+      text-transform:uppercase;letter-spacing:.13em;
+      font-size:.76rem;font-weight:800;color:var(--teal)
+    }
+    .section-head h2{
+      margin:10px 0 13px;
+      font-size:clamp(2.35rem,4vw,3.8rem);
+      line-height:1.08;letter-spacing:-.04em;
+      color:var(--navy)
+    }
+    .section-head p{margin:0;color:var(--muted);font-size:1.04rem}
+
+    /* CAPABILITIES */
+    .capabilities{background:#fff}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:25px;
+      background:#fff;
+      min-height:245px;
+      transition:.2s ease;
+    }
+    .card:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(20,30,50,.07)}
+    .card .num{font-size:.76rem;letter-spacing:.12em;font-weight:800;color:var(--blue)}
+    .card h3{margin:14px 0 8px;color:var(--navy);font-size:1.2rem}
+    .card p{margin:0;color:var(--muted)}
+
+    /* PRINCIPLE */
+    .principle{background:var(--soft)}
+    .principle-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:start}
+    .statement{
+      background:var(--navy);
+      color:#fff;border-radius:24px;padding:32px;
+      box-shadow:var(--shadow);
+    }
+    .statement h3{font-size:1.8rem;margin:0 0 12px}
+    .statement p{margin:0;color:#C7D2E0}
+    .rules{display:grid;gap:12px}
+    .rule{
+      background:#fff;border:1px solid var(--line);
+      border-radius:16px;padding:18px 20px;
+    }
+    .rule strong{display:block;color:var(--navy);margin-bottom:4px}
+    .rule span{color:var(--muted);font-size:.94rem}
+
+    /* APPROACH */
+    .process{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .step{
+      border:1px solid var(--line);
+      border-radius:17px;padding:20px;background:#fff;min-height:172px
+    }
+    .step b{
+      display:grid;place-items:center;width:32px;height:32px;border-radius:50%;
+      background:var(--soft-2);color:var(--blue);font-size:.8rem;margin-bottom:14px
+    }
+    .step strong{display:block;color:var(--navy);margin-bottom:6px}
+    .step span{color:var(--muted);font-size:.92rem}
+
+    /* SCOPE */
+    .scope{background:var(--navy);color:#fff}
+    .scope .section-head h2{color:#fff}
+    .scope .section-head p{color:#BCC8D6}
+    .tags{display:flex;flex-wrap:wrap;gap:10px}
+    .tag{
+      padding:10px 14px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.04);
+      color:#E4EDF5;font-weight:600;font-size:.92rem
+    }
+
+    /* RESEARCH */
+    .research{background:var(--soft)}
+    .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .research-card{
+      position:relative;overflow:hidden;
+      background:#fff;border:1px solid var(--line);
+      border-radius:20px;padding:25px;
+    }
+    .research-card:before{
+      content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+      background:linear-gradient(var(--blue),var(--teal));
+    }
+    .research-card h3{margin:0 0 8px;color:var(--navy)}
+    .research-card p{margin:0;color:var(--muted)}
+
+    /* THINKING */
+    .thinking-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .thinking-card{
+      border:1px solid var(--line);border-radius:18px;padding:22px;background:#fff
+    }
+    .thinking-card small{font-size:.74rem;letter-spacing:.11em;color:var(--teal);font-weight:800}
+    .thinking-card h3{margin:8px 0 8px;color:var(--navy);font-size:1.08rem}
+    .thinking-card p{margin:0;color:var(--muted);font-size:.95rem}
+
+    /* FOUNDER */
+    .founder{background:#fff}
+    .founder-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:34px;align-items:stretch}
+    .founder-card{
+      background:linear-gradient(145deg,var(--navy),var(--navy-2));
+      border-radius:24px;padding:30px;color:#fff;
+    }
+    .founder-card .small{
+      font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;
+      color:var(--teal);font-weight:800
+    }
+    .founder-card h3{font-size:2rem;margin:12px 0 6px}
+    .founder-card p{margin:0;color:#C7D2E0}
+    .founder-copy p{color:var(--muted)}
+    .quote{
+      margin-top:20px;padding:16px 20px;
+      border-left:4px solid var(--teal);
+      background:var(--soft);
+      border-radius:0 14px 14px 0;
+      color:var(--navy);font-weight:700;
+    }
+
+    /* CONTACT */
+    .contact{
+      background:
+        radial-gradient(circle at 88% 10%,rgba(20,184,166,.14),transparent 25%),
+        linear-gradient(135deg,var(--navy),#10284D);
+      color:#fff;
+    }
+    .contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+    .contact h2{
+      margin:0 0 14px;
+      font-size:clamp(2.4rem,4vw,3.9rem);
+      line-height:1.06;letter-spacing:-.04em
+    }
+    .contact p{color:#C2CEDC;max-width:780px}
+    .contact-box{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.055);
+      border-radius:20px;padding:24px;
+    }
+    .contact-box strong{display:block;margin-bottom:8px}
+    .contact-box a{display:block;color:#7DD3FC;font-weight:700;margin:6px 0}
+
+    footer{
+      padding:24px 0;background:#07101F;color:#93A4B7;
+      border-top:1px solid rgba(255,255,255,.08)
+    }
+    .footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+    @media(max-width:980px){
+      nav{display:none}
+      .hero-grid,.principle-grid,.founder-grid,.contact-grid{grid-template-columns:1fr}
+      .cards,.research-grid,.thinking-grid{grid-template-columns:1fr 1fr}
+      .process{grid-template-columns:1fr 1fr 1fr}
+      .proof-grid{grid-template-columns:1fr 1fr}
+      .proof:nth-child(2){border-right:none}
+    }
+    @media(max-width:650px){
+      .cards,.research-grid,.thinking-grid,.process,.proof-grid{grid-template-columns:1fr}
+      .proof{border-right:none;border-bottom:1px solid rgba(255,255,255,.10)}
+      .hero{padding-top:76px}
+      h1{font-size:3.5rem}
+      .focus-row{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-<header><div class="container nav"><a class="brand" href="#top"><span class="mark">PL</span><span>PRATAP LABS</span></a><div class="links"><a href="#capabilities">Capabilities</a><a href="#approach">Approach</a><a href="#research">Research</a><a href="#founder">Founder</a><a href="#contact">Contact</a></div></div></header>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">PRATAP <span>LABS</span></a>
+    <nav>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#approach">Approach</a>
+      <a href="#scope">Scope</a>
+      <a href="#research">Research</a>
+      <a href="#founder">Founder</a>
+      <a class="nav-cta" href="#contact">Start a conversation</a>
+    </nav>
+  </div>
+</header>
+
 <main id="top">
-<section class="hero"><div class="container hero-grid"><div><div class="eyebrow">Data Science • AI • Analytics • Research</div><h1>PRATAP<br>LABS</h1><div class="tag">Decoding Life, Mind &amp; Business</div><p class="lead">An independent Data Science, Machine Learning and Artificial Intelligence initiative focused on turning complex data, difficult questions and real-world challenges into evidence-driven insight and impact.</p><div class="cta"><a class="btn primary" href="mailto:pratap@prataplabs.com">Discuss a Project</a><a class="btn secondary" href="https://github.com/pratapds" target="_blank">Explore GitHub</a></div></div><aside class="hero-card"><h3>Where we focus</h3><div class="signal"><div class="pill"><strong>Business</strong><small>Analytics, decisions, prediction, optimization</small></div><div class="pill"><strong>Mind</strong><small>Brain, cognition, behaviour, intelligence</small></div><div class="pill"><strong>Life</strong><small>Biological systems, well-being, scientific data</small></div></div></aside></div></section>
 
-<section id="capabilities" class="soft"><div class="container"><div class="section-head"><h2>Broad capability. Problem-first thinking.</h2><p>Pratap Labs is designed to work across industries and domains. The methodology follows the problem—not the other way around.</p></div><div class="caps"><div class="cap">Data Science</div><div class="cap">Machine Learning</div><div class="cap">Artificial Intelligence</div><div class="cap">Data Analytics</div><div class="cap">Business Analytics</div><div class="cap">Predictive Modeling</div><div class="cap">Forecasting</div><div class="cap">Statistical Analysis</div><div class="cap">Optimization</div><div class="cap">Decision Intelligence</div><div class="cap">Anomaly &amp; Pattern Detection</div><div class="cap">AI-Assisted Analytics</div></div></div></section>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Data Science • Machine Learning • Artificial Intelligence • Business Analysis</div>
+      <h1>Decoding <span class="hero-highlight">Life, Mind</span><br>&amp; Business.</h1>
+      <p class="hero-sub">
+        Pratap Labs is an independent Data Science, AI, Business Analysis and research initiative — delivering practical analytical solutions for business today, while pursuing a long-term, interdisciplinary research vision spanning the brain, biological and cellular systems, and a data-driven Happiness Index for human well-being.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact">Discuss a Project</a>
+        <a class="btn secondary" href="https://github.com/pratapds" target="_blank" rel="noopener">Explore GitHub</a>
+      </div>
+    </div>
 
-<section id="approach"><div class="container"><div class="section-head"><h2>From question to decision.</h2><p>A sophisticated model answering the wrong question is still the wrong answer. We begin with context, evidence and the outcome that matters.</p></div><div class="steps"><div class="step"><span>1</span><strong>Understand the domain</strong></div><div class="step"><span>2</span><strong>Define the real problem</strong></div><div class="step"><span>3</span><strong>Interrogate the data</strong></div><div class="step"><span>4</span><strong>Select the right method</strong></div><div class="step"><span>5</span><strong>Validate rigorously</strong></div><div class="step"><span>6</span><strong>Translate insight into action</strong></div></div></div></section>
+    <aside class="hero-card">
+      <div class="label">Pratap Labs</div>
+      <h3>Built around the problem — not the tool.</h3>
+      <div class="focus">
+        <div class="focus-row"><strong>Business</strong><span>Analysis, decisions, growth, operations and performance</span></div>
+        <div class="focus-row"><strong>Data</strong><span>Exploration, modelling, prediction and insight</span></div>
+        <div class="focus-row"><strong>AI</strong><span>Applied intelligence with independent validation</span></div>
+        <div class="focus-row"><strong>Research</strong><span>Brain, cell, cognition and the Happiness Index</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
 
-<section id="research" class="soft"><div class="container"><div class="section-head"><h2>Research vision</h2><p>Long-term exploration at the intersection of computation, science, business and human understanding.</p></div><div class="grid"><article class="card"><h3>Brain &amp; Cognition</h3><p>Exploring how data, machine learning and AI can contribute to understanding brain activity, cognition, behaviour and intelligence.</p></article><article class="card"><h3>Cellular &amp; Biological Systems</h3><p>Investigating how computational approaches can reveal structure, patterns and relationships in complex biological data.</p></article><article class="card"><h3>Happiness &amp; Human Well-being</h3><p>Exploring richer, evidence-based ways to understand and quantify the factors associated with human flourishing and quality of life.</p></article></div></div></section>
+<div class="proof-strip">
+  <div class="container proof-grid">
+    <div class="proof"><strong>20+ years</strong><span>Cross-functional business leadership</span></div>
+    <div class="proof"><strong>Since 2023</strong><span>Focused Data Science practice</span></div>
+    <div class="proof"><strong>Python • SQL • ML</strong><span>Hands-on analytical capability</span></div>
+    <div class="proof"><strong>Problem-first</strong><span>Domain understanding before algorithms</span></div>
+  </div>
+</div>
 
-<section id="founder"><div class="container founder"><div class="founder-box"><h3>Pratap N.</h3><p>Founder &amp; Data Scientist</p><p style="margin-top:10px">Pratap Labs</p></div><div class="founder-copy"><div class="section-head" style="margin-bottom:16px"><h2>Business understanding meets Data Science.</h2></div><p>Pratap brings extensive experience across business leadership, sales, operations, brand management and decision-making, combined with hands-on Data Science, Machine Learning and AI capability.</p><p>His approach is grounded in understanding the problem behind the data, learning new domains quickly, validating assumptions, and selecting the analytical method that genuinely fits the problem.</p><div class="quote">“I use AI to accelerate my work, but the final validation and responsibility are mine.”</div></div></div></section>
+<section id="capabilities" class="capabilities">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Capabilities</div>
+      <h2>From complex data to clearer decisions.</h2>
+      <p>
+        Pratap Labs works across problem types and domains, selecting the analytical, statistical, Machine Learning or AI approach that best fits the objective.
+      </p>
+    </div>
 
-<section id="contact" class="contact"><div class="container"><h2>Have a difficult problem or an interesting dataset?</h2><p>We are open to conversations with businesses, startups, researchers, institutions and professionals across industries and disciplines.</p><div class="cta"><a class="btn primary" href="mailto:pratap@prataplabs.com">pratap@prataplabs.com</a><a class="btn secondary" style="color:#fff;border-color:#5f7c98" href="https://github.com/pratapds" target="_blank">github.com/pratapds</a></div></div></section>
+    <div class="cards">
+      <article class="card">
+        <div class="num">01</div>
+        <h3>Data Science & Predictive Analytics</h3>
+        <p>Exploratory analysis, feature engineering, classification, regression, forecasting, model evaluation and predictive decision support.</p>
+      </article>
+      <article class="card">
+        <div class="num">02</div>
+        <h3>Business Analysis & Decision Intelligence</h3>
+        <p>Business problem framing, requirements analysis, KPI and performance analysis, customer and market intelligence, and evidence-based decision support grounded in real operating experience.</p>
+      </article>
+      <article class="card">
+        <div class="num">03</div>
+        <h3>Machine Learning</h3>
+        <p>Model design, comparison, tuning, cross-validation, interpretability and practical Machine Learning workflows using Python and modern libraries.</p>
+      </article>
+      <article class="card">
+        <div class="num">04</div>
+        <h3>Applied AI & LLM Workflows</h3>
+        <p>AI-assisted research, prompt design, intelligent workflows and careful integration of LLMs with independent validation of assumptions and outputs.</p>
+      </article>
+      <article class="card">
+        <div class="num">05</div>
+        <h3>Complex Data Exploration</h3>
+        <p>Large, unfamiliar and multi-domain datasets approached through structured domain learning, data-quality analysis and iterative investigation.</p>
+      </article>
+      <article class="card">
+        <div class="num">06</div>
+        <h3>Research & Computational Investigation</h3>
+        <p>Data-driven exploration of interdisciplinary questions spanning the brain, cellular and biological systems, human intelligence, and a computational Happiness Index.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="principle">
+  <div class="container principle-grid">
+    <div class="statement">
+      <h3>The model should not come before the question.</h3>
+      <p>
+        A sophisticated model can still be useless if it solves the wrong problem. We begin by understanding the domain, the data and the outcome that matters.
+      </p>
+    </div>
+    <div class="rules">
+      <div class="rule"><strong>Understand the domain</strong><span>What does the data actually represent?</span></div>
+      <div class="rule"><strong>Define the real problem</strong><span>What decision, outcome or discovery matters?</span></div>
+      <div class="rule"><strong>Choose the right method</strong><span>Analytics, statistics, Machine Learning or AI — only when appropriate.</span></div>
+      <div class="rule"><strong>Validate rigorously</strong><span>Performance, assumptions, reliability and business relevance all matter.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Approach</div>
+      <h2>From ambiguity to evidence.</h2>
+      <p>A disciplined workflow keeps every analytical engagement connected to the real objective.</p>
+    </div>
+
+    <div class="process">
+      <div class="step"><b>1</b><strong>Frame</strong><span>Clarify the business or research question.</span></div>
+      <div class="step"><b>2</b><strong>Understand</strong><span>Study the domain, data structure, quality and constraints.</span></div>
+      <div class="step"><b>3</b><strong>Explore</strong><span>Investigate patterns, assumptions and meaningful signals.</span></div>
+      <div class="step"><b>4</b><strong>Model</strong><span>Apply the right statistical, analytical, ML or AI methodology.</span></div>
+      <div class="step"><b>5</b><strong>Validate</strong><span>Test robustness, usefulness, interpretability and real-world relevance.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="scope" class="scope">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Scope</div>
+      <h2>Industry-agnostic by design.</h2>
+      <p>
+        Pratap Labs is not defined by one industry, one algorithm or one category of project. The objective is to understand new domains quickly and solve the problem in front of us.
+      </p>
+    </div>
+
+    <div class="tags">
+      <span class="tag">Technology</span>
+      <span class="tag">Finance</span>
+      <span class="tag">Retail</span>
+      <span class="tag">Marketing</span>
+      <span class="tag">Customer Analytics</span>
+      <span class="tag">Operations</span>
+      <span class="tag">Supply Chain</span>
+      <span class="tag">Healthcare</span>
+      <span class="tag">Life Sciences</span>
+      <span class="tag">Business Intelligence</span>
+      <span class="tag">Scientific Data</span>
+      <span class="tag">Neuroscience & Cognition</span>
+      <span class="tag">Well-being & Happiness Research</span>
+      <span class="tag">Research</span>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="research">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Research Vision</div>
+      <h2>Beyond commercial analytics.</h2>
+      <p>
+        Pratap Labs is being built with a long-term interdisciplinary ambition: applying computation, Data Science and AI to difficult questions about life, mind and human well-being — connecting business, brain, cell and the science of happiness under one research direction.
+      </p>
+    </div>
+
+    <div class="research-grid">
+      <article class="research-card">
+        <h3>Brain & Cognition</h3>
+        <p>Exploring how Data Science, Machine Learning and AI can contribute to understanding brain activity, cognition, behaviour and intelligence.</p>
+      </article>
+      <article class="research-card">
+        <h3>Cell & Biological Systems</h3>
+        <p>Investigating computational approaches to complex cellular and biological data, patterns and systems — from the cellular level to broader questions about human life.</p>
+      </article>
+      <article class="research-card">
+        <h3>Happiness Index & Well-being</h3>
+        <p>Building richer, evidence-based, interdisciplinary ways — spanning data, psychology, neuroscience, biology and society — to understand and quantify human flourishing and quality of life.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Perspective</div>
+      <h2>Nuance matters.</h2>
+      <p>
+        The value of Data Science lies not only in model performance, but in the quality of the question, the validity of the evidence and the usefulness of the decision that follows.
+      </p>
+    </div>
+
+    <div class="thinking-grid">
+      <article class="thinking-card">
+        <small>MODEL STRATEGY</small>
+        <h3>When the “better” model is not the better business choice</h3>
+        <p>Performance, interpretability, implementation cost, risk and decision context must be considered together.</p>
+      </article>
+      <article class="thinking-card">
+        <small>AI VALIDATION</small>
+        <h3>AI can accelerate analysis without becoming the authority</h3>
+        <p>Generated answers, code and reasoning still require independent validation and professional judgment.</p>
+      </article>
+      <article class="thinking-card">
+        <small>BUSINESS ANALYTICS</small>
+        <h3>The most valuable analysis may begin by reframing the problem</h3>
+        <p>Understanding the decision behind the data often matters more than selecting the algorithm.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="founder" class="founder">
+  <div class="container founder-grid">
+    <div class="founder-card">
+      <div class="small">Founder</div>
+      <h3>Pratap N</h3>
+      <p>Data Scientist • Business Analyst • Founder, Pratap Labs</p>
+      <div class="quote" style="background:rgba(255,255,255,.06);border-left-color:#7DD3FC;color:#E4EDF5;margin-top:22px">IBM Data Science Professional Certificate</div>
+    </div>
+
+    <div class="founder-copy">
+      <div class="section-head" style="margin-bottom:14px">
+        <h2>Experience beyond the technical layer.</h2>
+      </div>
+      <p>
+        Pratap combines more than two decades of cross-functional business leadership with hands-on Data Science, Python, SQL, Machine Learning and Applied AI. His background spans sales, brand management, operations, data quality, stakeholder management and business decision-making — with a consistent track record of improving business performance and retaining customers and clients.
+      </p>
+      <p>
+        He made a deliberate transition into Data Science in 2023, building on the IBM Data Science Professional Certificate, and founded Pratap Labs to bring together business analysis, analytical capability and a broader research vision. He learns new domains quickly and looks beyond the technical layer of a dataset to the business or research question behind it — applying that same lens to large, complex, and previously unfamiliar problems.
+      </p>
+      <div class="quote">Understand deeply. Question assumptions. Let the evidence lead.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container contact-grid">
+    <div>
+      <h2>Have a difficult problem, complex dataset or serious question?</h2>
+      <p>
+        Pratap Labs is open to conversations with businesses, startups, research teams, institutions and professionals seeking Data Science, Machine Learning, AI, analytics or research capability.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" style="background:#fff;color:#0B132B;border-color:#fff" href="mailto:pratap@prataplabs.com">Start a Conversation</a>
+        <a class="btn secondary" style="color:#fff;border-color:rgba(255,255,255,.2)" href="https://github.com/pratapds" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+
+    <aside class="contact-box">
+      <strong>Pratap Labs</strong>
+      <a href="mailto:pratap@prataplabs.com">pratap@prataplabs.com</a>
+      <a href="https://github.com/pratapds" target="_blank" rel="noopener">github.com/pratapds</a>
+      <span style="color:#AFC0D0">Decoding Life, Mind & Business</span>
+    </aside>
+  </div>
+</section>
+
 </main>
-<footer><div class="container footer-row"><span>© 2026 Pratap Labs</span><span>Decoding Life, Mind &amp; Business</span></div></footer>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Pratap Labs</span>
+    <span>Data Science • Machine Learning • Artificial Intelligence • Business Analysis • Research</span>
+  </div>
+</footer>
+
 </body>
 </html>
