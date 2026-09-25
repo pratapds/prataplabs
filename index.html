@@ -1,599 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Pratap Labs is an independent Data Science, Machine Learning, Artificial Intelligence, Business Analysis and research initiative — solving complex business problems today, and pursuing a long-term research vision spanning the brain, biological and cellular systems, and a data-driven Happiness Index for human well-being.">
-  <meta name="theme-color" content="#0B132B">
-  <meta property="og:title" content="Pratap Labs — Decoding Life, Mind & Business">
-  <meta property="og:description" content="Data Science, Machine Learning, AI, Business Analysis, Decision Intelligence and interdisciplinary Research into brain, cell and happiness.">
-  <meta property="og:type" content="website">
-  <title>Pratap Labs | Data Science, AI, Business Analysis & Research</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --navy:#0B132B;
-      --navy-2:#111C3A;
-      --blue:#2563EB;
-      --teal:#14B8A6;
-      --ink:#172033;
-      --muted:#617085;
-      --line:#DCE3EA;
-      --soft:#F6F8FB;
-      --soft-2:#EEF3F8;
-      --white:#FFFFFF;
-      --shadow:0 20px 60px rgba(11,19,43,.10);
-      --radius:20px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--ink);
-      background:var(--white);
-      line-height:1.65;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-    h1,h2,h3,.brand{font-family:"Manrope","Inter",sans-serif}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,92%);margin:auto}
-
-    /* NAV */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(220,227,234,.85);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      min-height:74px;
-    }
-    .brand{
-      font-weight:800;letter-spacing:.02em;color:var(--navy);
-      font-size:1.05rem;
-    }
-    .brand span{color:var(--teal)}
-    nav{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:.94rem}
-    nav a:hover{color:var(--navy)}
-    .nav-cta{
-      padding:10px 15px;border-radius:999px;
-      background:var(--navy);color:#fff;font-weight:700;
-    }
-
-    /* HERO */
-    .hero{
-      position:relative;overflow:hidden;
-      background:
-        radial-gradient(circle at 84% 18%,rgba(37,99,235,.10),transparent 24%),
-        radial-gradient(circle at 74% 46%,rgba(20,184,166,.10),transparent 25%),
-        linear-gradient(180deg,#FFFFFF 0%,#F8FAFD 100%);
-      padding:112px 0 92px;
-    }
-    .hero:after{
-      content:"";position:absolute;right:-140px;bottom:-140px;
-      width:520px;height:520px;border-radius:50%;
-      border:1px solid rgba(37,99,235,.09);
-      box-shadow:
-        0 0 0 60px rgba(37,99,235,.025),
-        0 0 0 120px rgba(20,184,166,.02);
-    }
-    .hero-grid{
-      position:relative;z-index:1;
-      display:grid;grid-template-columns:1.18fr .82fr;gap:70px;align-items:center;
-    }
-    .eyebrow{
-      display:inline-flex;gap:8px;align-items:center;
-      text-transform:uppercase;letter-spacing:.14em;
-      font-size:.76rem;font-weight:800;color:var(--blue);
-      margin-bottom:18px;
-    }
-    .eyebrow:before{
-      content:"";width:28px;height:2px;background:var(--teal);border-radius:2px
-    }
-    h1{
-      margin:0;
-      font-size:clamp(3.6rem,7vw,6.5rem);
-      line-height:.96;letter-spacing:-.055em;
-      color:var(--navy);
-      max-width:900px;
-    }
-    .hero-highlight{color:var(--blue)}
-    .hero-sub{
-      margin:26px 0 0;
-      max-width:780px;
-      font-size:1.12rem;
-      color:var(--muted);
-    }
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:13px 18px;border-radius:12px;
-      font-weight:700;border:1px solid var(--line);
-      transition:.2s ease;
-    }
-    .btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
-    .btn.primary:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(11,19,43,.18)}
-    .btn.secondary:hover{border-color:var(--blue);color:var(--blue)}
-
-    .hero-card{
-      background:rgba(255,255,255,.9);
-      border:1px solid var(--line);
-      border-radius:28px;
-      box-shadow:var(--shadow);
-      padding:28px;
-    }
-    .hero-card .label{
-      font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;
-      color:var(--teal);font-weight:800;
-    }
-    .hero-card h3{
-      margin:10px 0 18px;
-      color:var(--navy);font-size:1.5rem;line-height:1.25
-    }
-    .focus{display:grid;gap:10px}
-    .focus-row{
-      display:grid;grid-template-columns:125px 1fr;gap:16px;
-      padding-top:13px;border-top:1px solid var(--line);
-    }
-    .focus-row strong{color:var(--navy)}
-    .focus-row span{color:var(--muted);font-size:.92rem}
-
-    /* PROOF STRIP */
-    .proof-strip{background:var(--navy);color:#fff}
-    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-    .proof{
-      padding:24px 20px;border-right:1px solid rgba(255,255,255,.10);
-    }
-    .proof:last-child{border-right:none}
-    .proof strong{display:block;font-size:1.05rem}
-    .proof span{display:block;color:#B7C3D3;font-size:.9rem;margin-top:3px}
-
-    section{padding:92px 0}
-    .section-head{max-width:850px;margin-bottom:38px}
-    .kicker{
-      text-transform:uppercase;letter-spacing:.13em;
-      font-size:.76rem;font-weight:800;color:var(--teal)
-    }
-    .section-head h2{
-      margin:10px 0 13px;
-      font-size:clamp(2.35rem,4vw,3.8rem);
-      line-height:1.08;letter-spacing:-.04em;
-      color:var(--navy)
-    }
-    .section-head p{margin:0;color:var(--muted);font-size:1.04rem}
-
-    /* CAPABILITIES */
-    .capabilities{background:#fff}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:25px;
-      background:#fff;
-      min-height:245px;
-      transition:.2s ease;
-    }
-    .card:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(20,30,50,.07)}
-    .card .num{font-size:.76rem;letter-spacing:.12em;font-weight:800;color:var(--blue)}
-    .card h3{margin:14px 0 8px;color:var(--navy);font-size:1.2rem}
-    .card p{margin:0;color:var(--muted)}
-
-    /* PRINCIPLE */
-    .principle{background:var(--soft)}
-    .principle-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:start}
-    .statement{
-      background:var(--navy);
-      color:#fff;border-radius:24px;padding:32px;
-      box-shadow:var(--shadow);
-    }
-    .statement h3{font-size:1.8rem;margin:0 0 12px}
-    .statement p{margin:0;color:#C7D2E0}
-    .rules{display:grid;gap:12px}
-    .rule{
-      background:#fff;border:1px solid var(--line);
-      border-radius:16px;padding:18px 20px;
-    }
-    .rule strong{display:block;color:var(--navy);margin-bottom:4px}
-    .rule span{color:var(--muted);font-size:.94rem}
-
-    /* APPROACH */
-    .process{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-    .step{
-      border:1px solid var(--line);
-      border-radius:17px;padding:20px;background:#fff;min-height:172px
-    }
-    .step b{
-      display:grid;place-items:center;width:32px;height:32px;border-radius:50%;
-      background:var(--soft-2);color:var(--blue);font-size:.8rem;margin-bottom:14px
-    }
-    .step strong{display:block;color:var(--navy);margin-bottom:6px}
-    .step span{color:var(--muted);font-size:.92rem}
-
-    /* SCOPE */
-    .scope{background:var(--navy);color:#fff}
-    .scope .section-head h2{color:#fff}
-    .scope .section-head p{color:#BCC8D6}
-    .tags{display:flex;flex-wrap:wrap;gap:10px}
-    .tag{
-      padding:10px 14px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.15);
-      background:rgba(255,255,255,.04);
-      color:#E4EDF5;font-weight:600;font-size:.92rem
-    }
-
-    /* RESEARCH */
-    .research{background:var(--soft)}
-    .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .research-card{
-      position:relative;overflow:hidden;
-      background:#fff;border:1px solid var(--line);
-      border-radius:20px;padding:25px;
-    }
-    .research-card:before{
-      content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
-      background:linear-gradient(var(--blue),var(--teal));
-    }
-    .research-card h3{margin:0 0 8px;color:var(--navy)}
-    .research-card p{margin:0;color:var(--muted)}
-
-    /* THINKING */
-    .thinking-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .thinking-card{
-      border:1px solid var(--line);border-radius:18px;padding:22px;background:#fff
-    }
-    .thinking-card small{font-size:.74rem;letter-spacing:.11em;color:var(--teal);font-weight:800}
-    .thinking-card h3{margin:8px 0 8px;color:var(--navy);font-size:1.08rem}
-    .thinking-card p{margin:0;color:var(--muted);font-size:.95rem}
-
-    /* FOUNDER */
-    .founder{background:#fff}
-    .founder-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:34px;align-items:stretch}
-    .founder-card{
-      background:linear-gradient(145deg,var(--navy),var(--navy-2));
-      border-radius:24px;padding:30px;color:#fff;
-    }
-    .founder-card .small{
-      font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;
-      color:var(--teal);font-weight:800
-    }
-    .founder-card h3{font-size:2rem;margin:12px 0 6px}
-    .founder-card p{margin:0;color:#C7D2E0}
-    .founder-copy p{color:var(--muted)}
-    .quote{
-      margin-top:20px;padding:16px 20px;
-      border-left:4px solid var(--teal);
-      background:var(--soft);
-      border-radius:0 14px 14px 0;
-      color:var(--navy);font-weight:700;
-    }
-
-    /* CONTACT */
-    .contact{
-      background:
-        radial-gradient(circle at 88% 10%,rgba(20,184,166,.14),transparent 25%),
-        linear-gradient(135deg,var(--navy),#10284D);
-      color:#fff;
-    }
-    .contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
-    .contact h2{
-      margin:0 0 14px;
-      font-size:clamp(2.4rem,4vw,3.9rem);
-      line-height:1.06;letter-spacing:-.04em
-    }
-    .contact p{color:#C2CEDC;max-width:780px}
-    .contact-box{
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.055);
-      border-radius:20px;padding:24px;
-    }
-    .contact-box strong{display:block;margin-bottom:8px}
-    .contact-box a{display:block;color:#7DD3FC;font-weight:700;margin:6px 0}
-
-    footer{
-      padding:24px 0;background:#07101F;color:#93A4B7;
-      border-top:1px solid rgba(255,255,255,.08)
-    }
-    .footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-
-    @media(max-width:980px){
-      nav{display:none}
-      .hero-grid,.principle-grid,.founder-grid,.contact-grid{grid-template-columns:1fr}
-      .cards,.research-grid,.thinking-grid{grid-template-columns:1fr 1fr}
-      .process{grid-template-columns:1fr 1fr 1fr}
-      .proof-grid{grid-template-columns:1fr 1fr}
-      .proof:nth-child(2){border-right:none}
-    }
-    @media(max-width:650px){
-      .cards,.research-grid,.thinking-grid,.process,.proof-grid{grid-template-columns:1fr}
-      .proof{border-right:none;border-bottom:1px solid rgba(255,255,255,.10)}
-      .hero{padding-top:76px}
-      h1{font-size:3.5rem}
-      .focus-row{grid-template-columns:1fr}
-    }
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Pratap Labs — Business and Data Science Consulting</title>
+<meta content="Founder-led Business and Data Science consulting that helps organisations understand business problems and make evidence-based decisions." name="description"/>
+<meta content="#071b2c" name="theme-color"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://prataplabs.com/" rel="canonical"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071b2c'/%3E%3Cpath d='M17 45V19h15c9 0 15 5 15 13s-6 13-15 13h-6v8h-9V45zm9-8h6c4 0 6-2 6-5s-2-5-6-5h-6v10z' fill='%2335d2b0'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="Pratap Labs" property="og:site_name"/>
+<meta content="Pratap Labs — Business and Data Science Consulting" property="og:title"/>
+<meta content="Understand the business problem, examine the evidence and make a better-informed decision." property="og:description"/>
+<meta content="https://prataplabs.com/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Pratap Labs — Business and Data Science Consulting" name="twitter:title"/>
+<meta content="Understand the business problem, examine the evidence and make a better-informed decision." name="twitter:description"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Pratap Labs",
+  "url": "https://prataplabs.com/",
+  "email": "pratap@prataplabs.com",
+  "description": "Founder-led Business and Data Science consulting for evidence-based decisions."
+}</script>
+<style>
+    :root{--navy:#071b2c;--ink:#10283a;--muted:#566b79;--paper:#f6f8f8;--white:#fff;--teal:#0f8f7c;--mint:#35d2b0;--line:#dbe4e7;--amber:#e6aa3a;--red:#b5484a;--shadow:0 24px 60px rgba(7,27,44,.12);--max:1180px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.6}a{color:inherit}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:12px}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.nav{position:sticky;top:0;z-index:20;background:rgba(246,248,248,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(219,228,231,.8)}.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;letter-spacing:-.02em;flex:0 0 auto}.mark{width:34px;height:34px;border-radius:10px;background:var(--navy);display:grid;place-items:center;color:var(--mint);font-size:18px}.links{display:flex;align-items:center;gap:22px;overflow:auto}.links>a{text-decoration:none;color:#294254;font-weight:600;font-size:.9rem;white-space:nowrap}.links>a:hover,.links>a:focus{color:var(--teal)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 20px;border-radius:9px;border:1px solid transparent;text-decoration:none;font-weight:750;transition:.2s ease;cursor:pointer;font-size:1rem;font-family:inherit}.btn-primary{background:var(--mint);color:var(--navy)}.btn-primary:hover{background:#5addbf;transform:translateY(-1px)}.btn-ghost{border-color:#7e959f;color:#fff;background:transparent}.btn-ghost:hover{border-color:var(--mint);color:var(--mint)}.btn-line{border-color:#9fb3bb;color:var(--navy);background:transparent}.btn-line:hover{border-color:var(--teal);color:var(--teal)}
+    .hero{background:var(--navy);color:#fff;padding:80px 0 68px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#a8c6cc;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.75rem}.eyebrow:before{content:"";width:26px;height:2px;background:var(--mint)}h1{font-size:clamp(2.6rem,5.6vw,5rem);line-height:.98;letter-spacing:-.05em;margin:20px 0 24px;max-width:760px}h1 span{color:var(--mint)}.lead{font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.6;color:#c9d9dd;max-width:660px;margin:0 0 30px}.actions{display:flex;flex-wrap:wrap;gap:13px}.trustline{margin-top:29px;color:#9db5bd;font-size:.88rem;display:flex;gap:16px;flex-wrap:wrap}.trustline span{display:flex;align-items:center;gap:7px}.trustline span:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mint)}.signal{position:relative;background:#0d2a3e;border:1px solid #21455a;border-radius:18px;padding:26px;box-shadow:var(--shadow)}.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.panel-head strong{font-size:.9rem}.badge{font-size:.72rem;border:1px solid #416075;border-radius:99px;padding:5px 9px;color:#bad0d6}.metric{background:#0a2234;border:1px solid #1d4055;padding:15px;border-radius:12px;margin-bottom:9px}.metric small{color:#91adb6}.metric b{display:block;font-size:1.45rem;margin-top:2px}.bar{height:7px;background:#17374b;border-radius:99px;margin-top:11px;overflow:hidden}.bar i{display:block;height:100%;background:var(--mint);border-radius:inherit}.decision{margin-top:16px;border-left:3px solid var(--amber);padding:4px 0 4px 14px;color:#d6e2e5;font-size:.94rem}.decision small{color:#91adb6;display:block}.micro{font-size:.72rem;color:#829da7;margin-top:16px}
+    .section{padding:88px 0}.section.tight{padding:56px 0}.section.white{background:#fff}.section.dark{background:var(--navy);color:#fff}.section.sand{background:#f1ede2}.kicker{color:var(--teal);font-size:.78rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}.dark .kicker{color:var(--mint)}h2{font-size:clamp(1.9rem,3.8vw,3.3rem);line-height:1.08;letter-spacing:-.04em;margin:0 0 16px;max-width:800px}h3{letter-spacing:-.01em}.intro{max-width:720px;color:var(--muted);font-size:1.08rem}.dark .intro{color:#b9ccd1}.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}.problem{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px}.num{color:var(--teal);font-weight:850;font-size:.78rem;letter-spacing:.12em}.problem h3{font-size:1.2rem;line-height:1.3;margin:12px 0 8px}.problem p{color:var(--muted);margin:0;font-size:.96rem}.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border:1px solid #24465a;border-radius:16px;overflow:hidden}.step{padding:28px 22px;border-right:1px solid #24465a}.step:last-child{border:0}.step span{color:var(--mint);font-weight:850}.step h3{margin:16px 0 7px;font-size:1.1rem}.step p{margin:0;color:#aac0c7;font-size:.92rem}
+    .demo-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:42px;align-items:start;margin-top:44px}.demo-media{min-width:0}.report-shell{position:relative;aspect-ratio:16/9;background:#0a2234;border-radius:16px;border:1px solid #315066;overflow:hidden;box-shadow:var(--shadow)}.report-shell iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}.narration{margin-top:14px;background:#0a2234;border:1px solid #315066;border-radius:12px;padding:16px 18px;text-align:center;color:#fff}.narration strong{font-size:.98rem}.narration-guide{margin:5px auto 0;color:#a9c0c7;font-size:.82rem}.voice-controls{display:flex;justify-content:center;gap:10px;margin-top:14px}.voice-btn{appearance:none;border:1px solid var(--mint);border-radius:9px;background:var(--mint);color:var(--navy);min-height:46px;padding:0 18px;font:inherit;font-weight:800;cursor:pointer}.voice-btn.secondary{background:transparent;color:#dce8ea;border-color:#5a7888}.voice-btn:hover{filter:brightness(1.08)}.voice-btn:disabled{opacity:.5;cursor:not-allowed}.voice-status{display:block;min-height:1.5em;margin-top:11px;color:#f4d69a;font-size:.82rem}.transcript{margin-top:18px;text-align:left;border-top:1px solid #315066;padding-top:14px;color:#a9c0c7;font-size:.8rem}.transcript summary{cursor:pointer;color:#dce8ea;font-weight:700}.transcript p{font-size:.82rem;line-height:1.55}.nospeech{display:none}.demo-copy ul{list-style:none;padding:0;margin:22px 0}.demo-copy li{padding:11px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;font-size:.97rem}.demo-copy li:before{content:"✓";color:var(--teal);font-weight:900}.note{font-size:.83rem;color:var(--muted);background:#eef3f3;border-left:3px solid var(--teal);padding:12px 14px}
+    .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}.fit-card{border:1px solid var(--line);border-radius:14px;padding:26px;background:#fff}.fit-card.no{border-color:#e4cfce;background:#fbf4f3}.fit-card h3{margin:0 0 14px;font-size:1.05rem}.fit-card ul{margin:0;padding-left:20px}.fit-card li{margin:8px 0;font-size:.95rem;color:var(--ink)}.gates{margin-top:20px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.gate{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 12px;text-align:center}.gate b{display:block;color:var(--teal);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}.gate span{font-size:.86rem;color:var(--muted)}
+    .calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:44px;align-items:start}.calc-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow)}.field{margin-bottom:20px}.field label{display:flex;justify-content:space-between;font-size:.88rem;font-weight:700;margin-bottom:8px;color:var(--ink)}.field label output{color:var(--teal);font-weight:800}.field input[type=range]{width:100%;accent-color:#0f8f7c}.field input[type=number]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:1rem;font-family:inherit}.result{background:var(--navy);color:#fff;border-radius:16px;padding:28px;box-shadow:var(--shadow)}.result .range{font-size:2.1rem;font-weight:850;letter-spacing:-.03em;margin:6px 0 4px}.result .rangesub{color:#9db5bd;font-size:.86rem;margin-bottom:18px}.assump{list-style:none;padding:0;margin:16px 0;font-size:.86rem;color:#c9d9dd}.assump li{padding:7px 0;border-top:1px solid #1d4055}.calcnote{font-size:.78rem;color:#8ea6ad;margin-top:14px}
+    .health-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:44px;align-items:start}.drop{border:2px dashed var(--line);border-radius:16px;padding:34px;text-align:center;background:#fff}.drop input{display:none}.drop label{display:inline-flex;align-items:center;gap:9px;cursor:pointer}.filename{font-size:.86rem;color:var(--muted);margin-top:12px;word-break:break-all}.scorewrap{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;min-height:220px}.scorebig{font-size:2.6rem;font-weight:850;letter-spacing:-.03em}.scorebig span{font-size:1rem;color:var(--muted);font-weight:600}.hfind{list-style:none;padding:0;margin:16px 0 0}.hfind li{padding:10px 0;border-top:1px solid var(--line);font-size:.92rem}.privline{font-size:.82rem;color:var(--teal);font-weight:700;margin-top:14px;display:flex;gap:8px;align-items:center}.privline:before{content:"🔒"}
+    .offer{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}.offer-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:32px}.offer-card.featured{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:var(--shadow)}.offer-card h3{font-size:1.55rem;margin:0 0 6px}.price{font-size:1.9rem;font-weight:850;letter-spacing:-.03em;margin:20px 0 2px}.pricealt{font-size:.86rem;color:var(--muted);margin:0 0 18px}.featured .pricealt{color:#9db5bd}.price small{font-size:.84rem;font-weight:600;color:var(--muted)}.featured .price small,.featured p{color:#b9ccd1}.offer-card ul{padding-left:20px;margin:22px 0}.offer-card li{margin:8px 0;font-size:.95rem}.guarantee{border-top:1px solid rgba(255,255,255,.18);margin-top:22px;padding-top:18px;color:#dce8ea;font-size:.92rem}.ladder{margin-top:20px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.ladder table{width:100%;border-collapse:collapse;font-size:.92rem}.ladder th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-weight:700}.ladder td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}.ladder tr:nth-child(even) td{background:#f8f9f7}
+    .charter{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:42px}.commitment{border:1px solid #27495c;border-radius:12px;padding:20px;display:flex;gap:15px}.commitment b{width:30px;height:30px;flex:0 0 30px;border-radius:8px;background:rgba(53,210,176,.12);color:var(--mint);display:grid;place-items:center}.commitment h3{font-size:.98rem;margin:2px 0 5px}.commitment p{font-size:.9rem;color:#a9c0c7;margin:0}
+    .claims{margin-top:38px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.claims table{width:100%;border-collapse:collapse;font-size:.88rem}.claims th{background:#eef1ea;text-align:left;padding:10px 12px;font-weight:800;color:var(--ink)}.claims td{padding:10px 12px;border-top:1px solid var(--line);color:var(--ink)}.lvl{display:inline-block;padding:2px 9px;border-radius:99px;font-size:.74rem;font-weight:800}.lvl-pub{background:#e3f1ee;color:#0f7b6c}.lvl-syn{background:#fdf1de;color:#a5690f}
+    .insights-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}.brief{border:1px solid var(--line);border-radius:14px;padding:26px;background:#fff}.brief .tag{color:var(--teal);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}.brief h3{margin:12px 0 8px;font-size:1.18rem}.brief p{color:var(--muted);margin:0 0 6px;font-size:.94rem}.brief .qa b{color:var(--ink)}
+    .founder{display:grid;grid-template-columns:.65fr 1.35fr;gap:50px;align-items:start}.founder-card{background:var(--navy);color:#fff;border-radius:16px;padding:28px;position:sticky;top:100px}.founder-card .initials{width:60px;height:60px;border-radius:14px;background:var(--mint);color:var(--navy);display:grid;place-items:center;font-size:1.3rem;font-weight:900;margin-bottom:20px}.founder-card h3{margin:0}.founder-card p{color:#a9c0c7;margin:5px 0;font-size:.94rem}.founder-copy p{color:var(--muted);font-size:1.05rem}.founder-copy strong{color:var(--ink)}
+    .cta{padding:80px 0;background:var(--mint);color:var(--navy)}.cta-inner{display:flex;justify-content:space-between;align-items:center;gap:36px}.cta h2{max-width:720px;margin-bottom:10px}.cta p{margin:0;max-width:640px}.cta .btn{background:var(--navy);color:#fff;white-space:nowrap}
+    footer{background:#04131f;color:#a8bbc2;padding:46px 0}.footer-grid{display:flex;justify-content:space-between;gap:36px;align-items:flex-start;flex-wrap:wrap}.footer-grid strong{color:#fff}.footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{text-decoration:none}.fine{font-size:.79rem;border-top:1px solid #193345;margin-top:28px;padding-top:20px}
+    @media(max-width:960px){.links>a:not(.btn){display:none}.hero-grid,.demo-grid,.founder,.fit-grid,.calc-wrap,.health-wrap,.insights-grid{grid-template-columns:1fr}.signal{max-width:620px}.problem-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step{border-bottom:1px solid #24465a}.offer{grid-template-columns:1fr}.founder-card{position:static}.cta-inner{display:block}.cta .btn{margin-top:24px}.gates{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.wrap{width:min(var(--max),calc(100% - 28px))}.nav-inner{height:66px}.links{gap:8px}.links .btn{padding:0 13px;font-size:.84rem}.hero{padding:56px 0}.section{padding:64px 0}h1{font-size:2.6rem}.actions{display:grid}.btn{width:100%}.trustline{display:grid;gap:8px}.steps,.charter,.ladder,.offer,.gates{grid-template-columns:1fr}.step{border-right:0}.offer-card{padding:24px}.footer-grid{display:block}.footer-links{margin-top:20px}.ladder{overflow-x:auto}.ladder table{min-width:640px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
   </style>
 </head>
-<body>
+<body><a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Primary navigation" class="nav"><div class="wrap nav-inner"><a aria-label="Pratap Labs home" class="brand" href="#top"><span aria-hidden="true" class="mark">P</span>PRATAP LABS</a><div class="links"><a href="#services">Services</a><a href="#approach">Approach</a><a href="#demo">Demo</a><a href="#health">Data check</a><a href="#trust">Trust</a><a href="#about">About</a><a class="btn btn-primary" href="mailto:pratap@prataplabs.com?subject=Business%20consulting%20enquiry">Discuss a business problem</a></div></div></nav>
+<main id="main">
+<header class="hero" id="top"><div class="wrap hero-grid"><div><div class="eyebrow">Business and Data Science Consulting</div><h1>Turn business questions into <span>data-driven decisions.</span></h1><p class="lead">I help organisations define the real business problem, understand the available data, compare practical options and decide what to do next.</p><div class="actions"><a class="btn btn-primary" href="mailto:pratap@prataplabs.com?subject=Business%20consulting%20enquiry">Discuss your business challenge <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#demo">Explore the live demo</a></div><div class="trustline"><span>Founder-led consulting</span><span>Business analysis and data science</span><span>Explainable recommendations</span></div></div><aside aria-label="Consulting workflow" class="signal"><div class="panel-head"><strong>From question to decision</strong><span class="badge">Pratap Labs</span></div><div class="metric"><small>Clarify</small><b>Define the business question</b></div><div class="metric"><small>Examine</small><b>Assess the evidence and its limits</b></div><div class="metric"><small>Decide</small><b>Compare options and trade-offs</b></div><div class="decision"><small>Guide the next step</small>Translate the analysis into a practical recommendation that decision-makers can understand and own.</div></aside></div></header>
+<section aria-labelledby="services-title" class="section" id="services"><div class="wrap"><div class="kicker">Where I help</div><h2 id="services-title">Good decisions begin with a well-framed problem.</h2><p class="intro">The work starts with the decision the organisation needs to make. I then connect business context, operational knowledge and relevant data so leaders can see what the evidence supports, what remains uncertain and what deserves attention.</p><div class="problem-grid"><article class="problem"><h3>Business analysis</h3><p>Clarify objectives, stakeholders, processes, constraints and the decision that must be made.</p></article><article class="problem"><h3>Data science consulting</h3><p>Assess data, test assumptions, identify patterns and distinguish reliable evidence from noise.</p></article><article class="problem"><h3>Decision guidance</h3><p>Compare options, explain trade-offs and convert findings into practical recommendations.</p></article></div></div></section>
+<section aria-labelledby="fit-title" class="section sand" id="fit"><div class="wrap"><div class="kicker">A useful starting point</div><h2 id="fit-title">Bring a real decision, not a request for more reporting.</h2><p class="intro">Pratap Labs is most useful when a business question matters, relevant data exists and a decision-maker is prepared to act on the evidence.</p><div class="fit-grid"><div class="fit-card"><h3>Situations I can help with</h3><ul><li>The business problem is important but not yet clearly defined</li><li>Data exists across different teams or systems and does not tell a consistent story</li><li>Leaders need to understand causes, options and trade-offs before acting</li><li>Existing reporting describes performance but does not guide a decision</li></ul></div><div class="fit-card no"><h3>What must be clear before work begins</h3><ul><li>The decision owner and the business question</li><li>The data that may be relevant and who is authorised to share it</li><li>The boundaries of the work and the intended decision</li><li>The responsibilities, confidentiality terms and expected deliverables</li></ul></div></div></div></section>
+<section aria-labelledby="approach-title" class="section dark" id="approach"><div class="wrap"><div class="kicker">Consulting approach</div><h2 id="approach-title">A disciplined path from uncertainty to action.</h2><p class="intro">The method adapts to the business problem while keeping the reasoning visible to the people who will use it.</p><div class="steps"><article class="step"><h3>Understand</h3><p>Frame the decision, context, stakeholders, constraints and definition of success.</p></article><article class="step"><h3>Assess</h3><p>Review the available data, its meaning, quality, access and limitations.</p></article><article class="step"><h3>Analyse</h3><p>Test assumptions, investigate causes and compare plausible explanations.</p></article><article class="step"><h3>Guide</h3><p>Present options, trade-offs and a practical recommendation for the decision owner.</p></article></div></div></section>
+<section aria-labelledby="demo-title" class="section white" id="demo"><div class="wrap"><div class="kicker">Interactive retail demonstration</div><h2 id="demo-title">See how analysis becomes a business conversation.</h2><div class="demo-grid"><div class="demo-media"><div class="report-shell"><iframe allowfullscreen="" loading="lazy" src="https://app.fabric.microsoft.com/view?r=eyJrIjoiNmM3YjY5MmUtMmQzZi00MjA0LTkyYjUtYzFjZGU1NjRmYTkxIiwidCI6ImE1ZDU1NmEyLWEyOTUtNDYzOC05MGU1LWZiMDAwZDNiMTNjOSJ9&amp;pageName=3bb43c57e907b9dd34a0" title="Pratap Labs interactive retail intelligence demonstration"></iframe></div><div class="narration"><strong>Guided business walkthrough</strong><p class="narration-guide">Start the narration, then explore the report at your own pace.</p><div aria-label="Voice-over controls" class="voice-controls"><button class="voice-btn" id="voicePlay" type="button">Play guided walkthrough</button><button class="voice-btn secondary" disabled="" id="voiceStop" type="button">Stop</button></div><span aria-live="polite" class="voice-status" id="voiceStatus" role="status">Nothing plays automatically.</span><span class="voice-status nospeech" id="voiceUnsupported">Voice-over is not supported by this browser. The transcript remains available.</span><details class="transcript"><summary>Read the walkthrough transcript</summary><p id="voiceTranscript">Welcome to the Pratap Labs retail intelligence demonstration. The information shown here is synthetic and is used only to explain the consulting approach. Begin with the executive overview to understand the overall relationship between revenue, profit, orders and units. The purpose is not to admire a headline measure, but to ask whether commercial growth and profit quality are moving together. Continue to sales trends and look for changes that deserve explanation. A change in performance may reflect demand, basket value, product mix, promotions, availability or returns, so the next step is to test those explanations rather than assume a cause. In product performance, compare demand with contribution and identify products that appear strong on revenue but weak on margin quality. In store performance, compare locations facing similar conditions and investigate differences in assortment, availability, returns and commercial execution. Customer analysis helps examine purchase behaviour and concentration without exposing personal identities. Inventory analysis brings together availability, excess stock and financial exposure so operational action can be prioritised. Return analysis separates different causes because each cause requires a different response. The management conclusion is to turn each important finding into a clear decision, an accountable owner and a way to evaluate what changed. This is how Pratap Labs uses business analysis and data science to guide a practical, evidence-based decision.</p></details></div></div><div class="demo-copy"><p class="intro">This public reference demonstration uses synthetic retail data to show how a business question can be explored from executive performance through products, stores, customers, inventory and returns.</p><ul><li>Follow the narrated story from overview to management action.</li><li>Use the available controls to investigate the evidence.</li><li>Open the demonstration fullscreen for detailed exploration.</li><li>Focus on the decision the evidence supports and the uncertainty that remains.</li></ul><div class="note"><strong>Important:</strong> the demonstration is public and contains no confidential client data or customer results.</div></div></div></div></section>
 
-<header>
-  <div class="container nav">
-    <a class="brand" href="#top">PRATAP <span>LABS</span></a>
-    <nav>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#approach">Approach</a>
-      <a href="#scope">Scope</a>
-      <a href="#research">Research</a>
-      <a href="#founder">Founder</a>
-      <a class="nav-cta" href="#contact">Start a conversation</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Data Science • Machine Learning • Artificial Intelligence • Business Analysis</div>
-      <h1>Decoding <span class="hero-highlight">Life, Mind</span><br>&amp; Business.</h1>
-      <p class="hero-sub">
-        Pratap Labs is an independent Data Science, AI, Business Analysis and research initiative — delivering practical analytical solutions for business today, while pursuing a long-term, interdisciplinary research vision spanning the brain, biological and cellular systems, and a data-driven Happiness Index for human well-being.
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#contact">Discuss a Project</a>
-        <a class="btn secondary" href="https://github.com/pratapds" target="_blank" rel="noopener">Explore GitHub</a>
-      </div>
-    </div>
-
-    <aside class="hero-card">
-      <div class="label">Pratap Labs</div>
-      <h3>Built around the problem — not the tool.</h3>
-      <div class="focus">
-        <div class="focus-row"><strong>Business</strong><span>Analysis, decisions, growth, operations and performance</span></div>
-        <div class="focus-row"><strong>Data</strong><span>Exploration, modelling, prediction and insight</span></div>
-        <div class="focus-row"><strong>AI</strong><span>Applied intelligence with independent validation</span></div>
-        <div class="focus-row"><strong>Research</strong><span>Brain, cell, cognition and the Happiness Index</span></div>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<div class="proof-strip">
-  <div class="container proof-grid">
-    <div class="proof"><strong>20+ years</strong><span>Cross-functional business leadership</span></div>
-    <div class="proof"><strong>Since 2023</strong><span>Focused Data Science practice</span></div>
-    <div class="proof"><strong>Python • SQL • ML</strong><span>Hands-on analytical capability</span></div>
-    <div class="proof"><strong>Problem-first</strong><span>Domain understanding before algorithms</span></div>
-  </div>
-</div>
-
-<section id="capabilities" class="capabilities">
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Capabilities</div>
-      <h2>From complex data to clearer decisions.</h2>
-      <p>
-        Pratap Labs works across problem types and domains, selecting the analytical, statistical, Machine Learning or AI approach that best fits the objective.
-      </p>
-    </div>
-
-    <div class="cards">
-      <article class="card">
-        <div class="num">01</div>
-        <h3>Data Science & Predictive Analytics</h3>
-        <p>Exploratory analysis, feature engineering, classification, regression, forecasting, model evaluation and predictive decision support.</p>
-      </article>
-      <article class="card">
-        <div class="num">02</div>
-        <h3>Business Analysis & Decision Intelligence</h3>
-        <p>Business problem framing, requirements analysis, KPI and performance analysis, customer and market intelligence, and evidence-based decision support grounded in real operating experience.</p>
-      </article>
-      <article class="card">
-        <div class="num">03</div>
-        <h3>Machine Learning</h3>
-        <p>Model design, comparison, tuning, cross-validation, interpretability and practical Machine Learning workflows using Python and modern libraries.</p>
-      </article>
-      <article class="card">
-        <div class="num">04</div>
-        <h3>Applied AI & LLM Workflows</h3>
-        <p>AI-assisted research, prompt design, intelligent workflows and careful integration of LLMs with independent validation of assumptions and outputs.</p>
-      </article>
-      <article class="card">
-        <div class="num">05</div>
-        <h3>Complex Data Exploration</h3>
-        <p>Large, unfamiliar and multi-domain datasets approached through structured domain learning, data-quality analysis and iterative investigation.</p>
-      </article>
-      <article class="card">
-        <div class="num">06</div>
-        <h3>Research & Computational Investigation</h3>
-        <p>Data-driven exploration of interdisciplinary questions spanning the brain, cellular and biological systems, human intelligence, and a computational Happiness Index.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="principle">
-  <div class="container principle-grid">
-    <div class="statement">
-      <h3>The model should not come before the question.</h3>
-      <p>
-        A sophisticated model can still be useless if it solves the wrong problem. We begin by understanding the domain, the data and the outcome that matters.
-      </p>
-    </div>
-    <div class="rules">
-      <div class="rule"><strong>Understand the domain</strong><span>What does the data actually represent?</span></div>
-      <div class="rule"><strong>Define the real problem</strong><span>What decision, outcome or discovery matters?</span></div>
-      <div class="rule"><strong>Choose the right method</strong><span>Analytics, statistics, Machine Learning or AI — only when appropriate.</span></div>
-      <div class="rule"><strong>Validate rigorously</strong><span>Performance, assumptions, reliability and business relevance all matter.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="approach">
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Approach</div>
-      <h2>From ambiguity to evidence.</h2>
-      <p>A disciplined workflow keeps every analytical engagement connected to the real objective.</p>
-    </div>
-
-    <div class="process">
-      <div class="step"><b>1</b><strong>Frame</strong><span>Clarify the business or research question.</span></div>
-      <div class="step"><b>2</b><strong>Understand</strong><span>Study the domain, data structure, quality and constraints.</span></div>
-      <div class="step"><b>3</b><strong>Explore</strong><span>Investigate patterns, assumptions and meaningful signals.</span></div>
-      <div class="step"><b>4</b><strong>Model</strong><span>Apply the right statistical, analytical, ML or AI methodology.</span></div>
-      <div class="step"><b>5</b><strong>Validate</strong><span>Test robustness, usefulness, interpretability and real-world relevance.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="scope" class="scope">
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Scope</div>
-      <h2>Industry-agnostic by design.</h2>
-      <p>
-        Pratap Labs is not defined by one industry, one algorithm or one category of project. The objective is to understand new domains quickly and solve the problem in front of us.
-      </p>
-    </div>
-
-    <div class="tags">
-      <span class="tag">Technology</span>
-      <span class="tag">Finance</span>
-      <span class="tag">Retail</span>
-      <span class="tag">Marketing</span>
-      <span class="tag">Customer Analytics</span>
-      <span class="tag">Operations</span>
-      <span class="tag">Supply Chain</span>
-      <span class="tag">Healthcare</span>
-      <span class="tag">Life Sciences</span>
-      <span class="tag">Business Intelligence</span>
-      <span class="tag">Scientific Data</span>
-      <span class="tag">Neuroscience & Cognition</span>
-      <span class="tag">Well-being & Happiness Research</span>
-      <span class="tag">Research</span>
-    </div>
-  </div>
-</section>
-
-<section id="research" class="research">
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Research Vision</div>
-      <h2>Beyond commercial analytics.</h2>
-      <p>
-        Pratap Labs is being built with a long-term interdisciplinary ambition: applying computation, Data Science and AI to difficult questions about life, mind and human well-being — connecting business, brain, cell and the science of happiness under one research direction.
-      </p>
-    </div>
-
-    <div class="research-grid">
-      <article class="research-card">
-        <h3>Brain & Cognition</h3>
-        <p>Exploring how Data Science, Machine Learning and AI can contribute to understanding brain activity, cognition, behaviour and intelligence.</p>
-      </article>
-      <article class="research-card">
-        <h3>Cell & Biological Systems</h3>
-        <p>Investigating computational approaches to complex cellular and biological data, patterns and systems — from the cellular level to broader questions about human life.</p>
-      </article>
-      <article class="research-card">
-        <h3>Happiness Index & Well-being</h3>
-        <p>Building richer, evidence-based, interdisciplinary ways — spanning data, psychology, neuroscience, biology and society — to understand and quantify human flourishing and quality of life.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Perspective</div>
-      <h2>Nuance matters.</h2>
-      <p>
-        The value of Data Science lies not only in model performance, but in the quality of the question, the validity of the evidence and the usefulness of the decision that follows.
-      </p>
-    </div>
-
-    <div class="thinking-grid">
-      <article class="thinking-card">
-        <small>MODEL STRATEGY</small>
-        <h3>When the “better” model is not the better business choice</h3>
-        <p>Performance, interpretability, implementation cost, risk and decision context must be considered together.</p>
-      </article>
-      <article class="thinking-card">
-        <small>AI VALIDATION</small>
-        <h3>AI can accelerate analysis without becoming the authority</h3>
-        <p>Generated answers, code and reasoning still require independent validation and professional judgment.</p>
-      </article>
-      <article class="thinking-card">
-        <small>BUSINESS ANALYTICS</small>
-        <h3>The most valuable analysis may begin by reframing the problem</h3>
-        <p>Understanding the decision behind the data often matters more than selecting the algorithm.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="founder" class="founder">
-  <div class="container founder-grid">
-    <div class="founder-card">
-      <div class="small">Founder</div>
-      <h3>Pratap N</h3>
-      <p>Data Scientist • Business Analyst • Founder, Pratap Labs</p>
-      <div class="quote" style="background:rgba(255,255,255,.06);border-left-color:#7DD3FC;color:#E4EDF5;margin-top:22px">IBM Data Science Professional Certificate</div>
-    </div>
-
-    <div class="founder-copy">
-      <div class="section-head" style="margin-bottom:14px">
-        <h2>Experience beyond the technical layer.</h2>
-      </div>
-      <p>
-        Pratap combines more than two decades of cross-functional business leadership with hands-on Data Science, Python, SQL, Machine Learning and Applied AI. His background spans sales, brand management, operations, data quality, stakeholder management and business decision-making — with a consistent track record of improving business performance and retaining customers and clients.
-      </p>
-      <p>
-        He made a deliberate transition into Data Science in 2023, building on the IBM Data Science Professional Certificate, and founded Pratap Labs to bring together business analysis, analytical capability and a broader research vision. He learns new domains quickly and looks beyond the technical layer of a dataset to the business or research question behind it — applying that same lens to large, complex, and previously unfamiliar problems.
-      </p>
-      <div class="quote">Understand deeply. Question assumptions. Let the evidence lead.</div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="container contact-grid">
-    <div>
-      <h2>Have a difficult problem, complex dataset or serious question?</h2>
-      <p>
-        Pratap Labs is open to conversations with businesses, startups, research teams, institutions and professionals seeking Data Science, Machine Learning, AI, analytics or research capability.
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" style="background:#fff;color:#0B132B;border-color:#fff" href="mailto:pratap@prataplabs.com">Start a Conversation</a>
-        <a class="btn secondary" style="color:#fff;border-color:rgba(255,255,255,.2)" href="https://github.com/pratapds" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-
-    <aside class="contact-box">
-      <strong>Pratap Labs</strong>
-      <a href="mailto:pratap@prataplabs.com">pratap@prataplabs.com</a>
-      <a href="https://github.com/pratapds" target="_blank" rel="noopener">github.com/pratapds</a>
-      <span style="color:#AFC0D0">Decoding Life, Mind & Business</span>
-    </aside>
-  </div>
-</section>
-
+<section aria-labelledby="health-title" class="section sand" id="health"><div class="wrap"><div class="kicker">Browser-local file check</div><h2 id="health-title">Check whether a data file is ready for discussion.</h2><p class="intro">Choose a CSV or Excel file to review basic structural issues such as missing values, duplicate headings and inconsistent rows. The file is analysed in your browser and is not sent to Pratap Labs.</p><div class="health-wrap"><div class="drop"><label for="datafile"><span class="btn btn-line">Choose a CSV or Excel file</span></label><input accept=".csv,.xlsx,.xls,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" id="datafile" type="file"/><div class="filename" id="dataname">No file chosen yet.</div><p class="privline">Your file stays on your device</p></div><div class="scorewrap" id="scorewrap"><p style="color:var(--muted);margin:0">A plain-language readiness summary will appear here after you choose a file.</p></div></div><div class="note" style="margin-top:18px"><strong>Scope:</strong> this is a structural check, not a full validation of business meaning, accuracy or fitness for a decision.</div></div></section>
+<section aria-labelledby="engagement-title" class="section" id="engagement"><div class="wrap"><div class="kicker">Working together</div><h2 id="engagement-title">Each engagement is shaped around the business decision.</h2><p class="intro">The scope depends on the question, available evidence, decision context and level of guidance required. Commercial terms are confidential, discussed privately and agreed in writing for each engagement.</p><div class="offer"><article class="offer-card"><h3>Business diagnosis</h3><p>Clarify the problem, decision owner, stakeholders, current process, constraints and evidence needed.</p><ul><li>Business question and decision framing</li><li>Stakeholder and process analysis</li><li>Data availability and quality assessment</li><li>Clear priorities for investigation</li></ul></article><article class="offer-card featured"><h3>Analysis and decision guidance</h3><p>Investigate the evidence, test assumptions and present practical options for the decision-maker.</p><ul><li>Analytical findings with stated limitations</li><li>Options and trade-offs</li><li>Recommended next action</li><li>Implementation guidance where appropriate</li></ul><div class="guarantee"><strong>Before work begins:</strong> scope, responsibilities, data handling, deliverables and confidential commercial terms are documented and agreed.</div></article></div></div></section>
+<section aria-labelledby="trust-title" class="section dark" id="trust"><div class="wrap"><div class="kicker">Professional principles</div><h2 id="trust-title">The reasoning should be as trustworthy as the result.</h2><p class="intro">Good consulting makes the evidence, assumptions, uncertainty and decision ownership visible.</p><div class="charter"><article class="commitment"><div><h3>Evidence before claims</h3><p>Findings are connected to relevant evidence, and limitations are stated clearly.</p></div></article><article class="commitment"><div><h3>Data minimisation</h3><p>Only data needed for the agreed question should be used, under documented access and handling rules.</p></div></article><article class="commitment"><div><h3>Client data stays client data</h3><p>Client information is not reused for another organisation without explicit written permission.</p></div></article><article class="commitment"><div><h3>Explainable recommendations</h3><p>Decision-makers can inspect the reasoning, challenge assumptions and choose whether to act.</p></div></article><article class="commitment"><div><h3>Human accountability</h3><p>Analysis supports a decision; it does not replace the responsibility of the decision owner.</p></div></article><article class="commitment"><div><h3>Clear engagement terms</h3><p>Scope, responsibilities, data handling, deliverables and commercial terms are agreed in writing.</p></div></article></div></div></section>
+<section aria-labelledby="insights-title" class="section white" id="insights"><div class="wrap"><div class="kicker">Questions worth investigating</div><h2 id="insights-title">Analysis is useful when it changes a decision.</h2><p class="intro">The right question depends on the business context. These examples show how reporting can be reframed into a decision.</p><div class="insights-grid"><article class="brief"><div class="tag">Operations</div><h3>Where do operational activity and financial outcomes disagree?</h3><p class="qa"><b>The issue:</b> strong activity can conceal weak commercial quality.</p><p class="qa"><b>The analysis:</b> connect operational measures with contribution, capacity, service and risk.</p><p class="qa"><b>The decision:</b> identify what should be protected, changed or investigated further.</p></article><article class="brief"><div class="tag">Customers</div><h3>Which customer behaviours should influence the next business action?</h3><p class="qa"><b>The issue:</b> averages can hide meaningful differences in behaviour and value.</p><p class="qa"><b>The analysis:</b> compare relevant groups while respecting privacy and business context.</p><p class="qa"><b>The decision:</b> choose an action that can be explained, tested and reviewed.</p></article></div></div></section>
+<section aria-labelledby="about-title" class="section sand" id="about"><div class="wrap founder"><aside class="founder-card"><div class="initials">PN</div><h3>Pratap N</h3><p>Founder, Pratap Labs</p><p>Business and Data Science Consultant</p></aside><div class="founder-copy"><div class="kicker">Founder-led consulting</div><h2 id="about-title">Business understanding and data analysis belong together.</h2><p>I am a Business Analyst and Business and Data Science consultant. I help organisations define the real problem, understand the available data, evaluate options and make practical data-driven decisions.</p><p>The work may include business analysis, data assessment, analytical modelling, decision support and implementation guidance. The method is selected for the problem rather than presented as the product.</p><p>Pratap Labs is a founder-led practice. Clients work directly with the person responsible for understanding the question, carrying out the analysis and explaining the recommendation.</p></div></div></section>
+<section class="cta"><div class="wrap cta-inner"><div><h2>Bring an important business question.</h2><p>We can discuss the decision, the available evidence and the kind of guidance that would be useful.</p></div><a class="btn" href="mailto:pratap@prataplabs.com?subject=Business%20consulting%20enquiry&amp;body=Organisation%3A%0ARole%3A%0ABusiness%20question%3A%0AWhat%20decision%20needs%20to%20be%20made%3A%0AWhat%20data%20may%20be%20available%3A">Discuss your business challenge <span aria-hidden="true">→</span></a></div></section>
 </main>
+<footer><div class="wrap"><div class="footer-grid"><div><strong>PRATAP LABS</strong><br/>Business and Data Science consulting for evidence-based decisions.<br/>Founder-led support for organisations seeking clearer, more practical decisions.</div><div class="footer-links"><a href="#services">Services</a><a href="#approach">Approach</a><a href="#demo">Demo</a><a href="#health">Data check</a><a href="#trust">Trust</a><a href="#about">About</a><a href="mailto:pratap@prataplabs.com">pratap@prataplabs.com</a></div></div><div class="fine">© Pratap Labs. The public demonstration uses synthetic data and does not represent client results. Website content is general information. Scope, responsibilities, data handling and confidential commercial terms are agreed individually in writing.</div></div></footer>
+<script src="xlsx.full.min.js"></script><script>
+(function(){
+  "use strict";
 
-<footer>
-  <div class="container footer-row">
-    <span>© 2026 Pratap Labs</span>
-    <span>Data Science • Machine Learning • Artificial Intelligence • Business Analysis • Research</span>
-  </div>
-</footer>
+  // ---- Browser-local data readiness check ----
+  function parseCsv(text){
+    var rows=[], row=[], field="", quoted=false;
+    for(var i=0;i<text.length;i++){
+      var ch=text[i];
+      if(ch==='"'){
+        if(quoted && text[i+1]==='"'){ field+='"'; i++; }
+        else quoted=!quoted;
+      }else if(ch===',' && !quoted){ row.push(field); field=""; }
+      else if((ch==='\n' || ch==='\r') && !quoted){
+        if(ch==='\r' && text[i+1]==='\n') i++;
+        row.push(field); field="";
+        if(row.some(function(v){return String(v).trim()!=="";})) rows.push(row);
+        row=[];
+      }else field+=ch;
+    }
+    row.push(field);
+    if(row.some(function(v){return String(v).trim()!=="";})) rows.push(row);
+    return rows;
+  }
 
-</body>
-</html>
+  function readinessSummary(matrix){
+    if(!matrix || !matrix.length) throw new Error("No rows found");
+    var header=matrix[0].map(function(v){return String(v==null?"":v).trim();});
+    var rows=matrix.slice(1), colCount=header.length, seen={}, duplicate=[], blankHeadings=0, missing=false, inconsistent=false;
+    header.forEach(function(h){ var k=h.toLowerCase(); if(!k) blankHeadings++; else if(seen[k]) duplicate.push(h); else seen[k]=true; });
+    rows.forEach(function(r){
+      if(r.length!==colCount) inconsistent=true;
+      for(var i=0;i<colCount;i++){ if(r[i]===undefined || r[i]===null || String(r[i]).trim()==="") missing=true; }
+    });
+    var findings=[];
+    findings.push(header.length && rows.length ? "The file has a readable heading row and data records." : "The file does not contain both headings and data records.");
+    findings.push(blankHeadings ? "Some columns have no heading and need a clear business name." : "Every column has a heading.");
+    findings.push(duplicate.length ? "Some headings are repeated and should be made unique." : "Column headings are unique.");
+    findings.push(inconsistent ? "Some records do not align with the same column structure." : "Records follow a consistent column structure.");
+    findings.push(missing ? "Some values are missing; their business importance should be assessed." : "No empty cells were detected in the visible data range.");
+    var ready = header.length && rows.length && !blankHeadings && !duplicate.length && !inconsistent;
+    return {ready:ready, findings:findings};
+  }
+
+  var datafile=document.getElementById("datafile"), dataname=document.getElementById("dataname"), scorewrap=document.getElementById("scorewrap");
+  function renderReadiness(matrix, sheetName){
+    var result=readinessSummary(matrix);
+    var heading=result.ready ? "Structurally ready for an initial discussion" : "Preparation is recommended before analysis";
+    var findings=result.findings.map(function(item){return "<li>"+item+"</li>";}).join("");
+    scorewrap.innerHTML="<h3 style='margin-top:0'>"+heading+"</h3>"+(sheetName?"<p style='color:var(--muted)'>Checked worksheet: "+sheetName+"</p>":"")+"<ul class='hfind'>"+findings+"</ul>";
+  }
+  if(datafile){ datafile.addEventListener("change", function(e){
+    var file=e.target.files && e.target.files[0]; if(!file) return;
+    dataname.textContent=file.name;
+    var ext=(file.name.split(".").pop()||"").toLowerCase(), reader=new FileReader();
+    reader.onerror=function(){scorewrap.innerHTML="<p style='color:var(--red);margin:0'>The file could not be read in this browser.</p>";};
+    if(ext==="csv"){
+      reader.onload=function(ev){try{renderReadiness(parseCsv(String(ev.target.result||"")),"");}catch(err){scorewrap.innerHTML="<p style='color:var(--red);margin:0'>The CSV file could not be interpreted. Check that it has a heading row and a consistent structure.</p>";}};
+      reader.readAsText(file);
+    }else if(ext==="xlsx" || ext==="xls"){
+      if(!window.XLSX){scorewrap.innerHTML="<p style='color:var(--red);margin:0'>Excel support is temporarily unavailable because the website spreadsheet component did not load. Please contact Pratap Labs or choose a CSV file.</p>";return;}
+      reader.onload=function(ev){try{var wb=XLSX.read(ev.target.result,{type:"array"}); var name=wb.SheetNames[0]; var matrix=XLSX.utils.sheet_to_json(wb.Sheets[name],{header:1,defval:"",raw:false}); renderReadiness(matrix,name);}catch(err){scorewrap.innerHTML="<p style='color:var(--red);margin:0'>The spreadsheet could not be interpreted. Check that the first worksheet contains a clear table.</p>";}};
+      reader.readAsArrayBuffer(file);
+    }else scorewrap.innerHTML="<p style='color:var(--red);margin:0'>Choose a CSV or Excel file.</p>";
+  }); }
+
+  // ---- Optional browser voice-over; user initiated and never autoplayed ----
+  var voicePlay = document.getElementById("voicePlay");
+  var voiceStop = document.getElementById("voiceStop");
+  var voiceStatus = document.getElementById("voiceStatus");
+  var voiceUnsupported = document.getElementById("voiceUnsupported");
+  var voiceTranscript = document.getElementById("voiceTranscript");
+  if(voicePlay && voiceStop && voiceTranscript){
+    if(!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)){
+      voicePlay.hidden = true;
+      voiceStop.hidden = true;
+      voiceStatus.hidden = true;
+      voiceUnsupported.classList.remove("nospeech");
+    }else{
+      var voiceRun = 0, voiceSpeaking = false;
+      function chooseVoice(){
+        var voices = window.speechSynthesis.getVoices();
+        return voices.find(function(v){ return /en-GB/i.test(v.lang) && /natural|neural/i.test(v.name); }) ||
+          voices.find(function(v){ return /en-GB/i.test(v.lang); }) ||
+          voices.find(function(v){ return /^en/i.test(v.lang); }) || null;
+      }
+      function resetVoice(){
+        voiceSpeaking = false;
+        voicePlay.disabled = false;
+        voicePlay.textContent = "Play guided walkthrough";
+        voiceStop.disabled = true;
+        voiceStatus.textContent = "Nothing plays automatically.";
+      }
+      var voiceChunks = voiceTranscript.textContent.trim().match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [voiceTranscript.textContent.trim()];
+      function speakChunk(index, runId){
+        if(!voiceSpeaking || runId !== voiceRun) return;
+        if(index >= voiceChunks.length){ resetVoice(); return; }
+        var utterance = new SpeechSynthesisUtterance(voiceChunks[index].trim());
+        var voice = chooseVoice();
+        if(voice) utterance.voice = voice;
+        utterance.lang = voice ? voice.lang : "en-GB";
+        utterance.rate = 0.92;
+        utterance.pitch = 0.96;
+        utterance.onend = function(){ speakChunk(index + 1, runId); };
+        utterance.onerror = function(){ resetVoice(); voiceStatus.textContent = "The walkthrough could not continue. Please use the transcript."; };
+        window.speechSynthesis.speak(utterance);
+      }
+      voicePlay.addEventListener("click", function(){
+        window.speechSynthesis.cancel();
+        voiceRun += 1;
+        voiceSpeaking = true;
+        voicePlay.disabled = true;
+        voicePlay.textContent = "Playing…";
+        voiceStop.disabled = false;
+        voiceStatus.textContent = "Guided walkthrough playing. Use the report navigation to follow each page.";
+        speakChunk(0, voiceRun);
+      });
+      voiceStop.addEventListener("click", function(){ voiceRun += 1; window.speechSynthesis.cancel(); resetVoice(); });
+      window.addEventListener("pagehide", function(){ voiceRun += 1; window.speechSynthesis.cancel(); });
+    }
+  }
+})();
+</script>
+</body></html>

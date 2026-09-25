@@ -1,134 +1,31 @@
-# Pratap Labs
+# Pratap Labs Website
 
-**Decoding Life, Mind & Business**
+Static, single-page website for the Pratap Labs Business and Data Science consulting practice.
 
-Pratap Labs is an independent **Data Science, Machine Learning, Artificial Intelligence, Business Analysis, and Research** initiative focused on solving complex business problems today while building toward a long-term interdisciplinary research vision.
+## What is included
 
-The website presents Pratap Labs as a problem-first, evidence-driven venture that combines business understanding, analytical rigor, Machine Learning, responsible AI, and research thinking.
+- Embedded, interactive retail intelligence demonstration using synthetic data
+- User-initiated browser voice-over and full accessible transcript
+- Responsive report frame with fullscreen support
+- Browser-local CSV and Excel structural readiness check
+- Consulting services, approach, professional principles and founder profile
 
-## Website
+## Public-positioning and compliance changes
 
-**Live:** https://prataplabs.com  
-**GitHub:** https://github.com/pratapds
-
-## What Pratap Labs Focuses On
-
-Pratap Labs works across domains and problem types, selecting the analytical, statistical, Machine Learning, or AI approach that best fits the objective.
-
-Core areas include:
-
-- Data Science and Predictive Analytics
-- Business Analysis and Decision Intelligence
-- Machine Learning
-- Applied AI and LLM Workflows
-- Complex Data Exploration
-- Research and Computational Investigation
-
-## Our Approach
-
-Pratap Labs follows a problem-first methodology:
-
-1. **Frame** — Clarify the business or research question.
-2. **Understand** — Study the domain, data structure, quality, and constraints.
-3. **Explore** — Investigate patterns, assumptions, and meaningful signals.
-4. **Model** — Apply the right analytical, statistical, Machine Learning, or AI methodology.
-5. **Validate** — Test robustness, usefulness, interpretability, and real-world relevance.
-
-> The model should not come before the question.
-
-## Scope
-
-Pratap Labs is **industry-agnostic by design**.
-
-The initiative is positioned to work across areas such as:
-
-- Technology
-- Finance
-- Retail
-- Marketing
-- Customer Analytics
-- Operations
-- Supply Chain
-- Healthcare
-- Life Sciences
-- Business Intelligence
-- Scientific Data
-- Neuroscience and Cognition
-- Well-being and Happiness Research
-- Interdisciplinary Research
-
-## Research Vision
-
-Beyond commercial analytics, Pratap Labs is developing a long-term research direction around:
-
-### Brain & Cognition
-Exploring how Data Science, Machine Learning, and AI can contribute to understanding brain activity, cognition, behaviour, and intelligence.
-
-### Cell & Biological Systems
-Investigating computational approaches to complex cellular and biological data, patterns, and systems.
-
-### Happiness Index & Human Well-being
-Exploring richer, evidence-based, interdisciplinary approaches to understanding and quantifying human flourishing, happiness, and quality of life.
-
-## Philosophy
-
-Pratap Labs is built around a few core principles:
-
-- Understand the domain before choosing the method.
-- Define the real problem before building the model.
-- Use technology because it fits the problem, not because it is fashionable.
-- Treat AI as an accelerator, not an unquestioned authority.
-- Validate assumptions, methods, and outputs independently.
-- Translate analysis into decisions, action, or discovery.
-
-## Founder
-
-**Pratap N**  
-Data Scientist • Business Analyst • Founder, Pratap Labs
-
-Pratap combines more than two decades of cross-functional business leadership with hands-on experience in Data Science, Python, SQL, Machine Learning, Applied AI, and business analysis.
-
-His background spans sales, brand management, operations, data quality, stakeholder management, and business decision-making, with a strong emphasis on connecting technical analysis to practical business and research problems.
-
-## Technology
-
-The current website is a lightweight static site built with:
-
-- HTML5
-- CSS3
-- Responsive design
-- Google Fonts — Inter and Manrope
-
-No framework or build system is required.
-
-## Repository Structure
-
-```text
-/
-├── index.html
-└── README.md
-```
+- No prices, fee ranges, engagement periods or public refund facility
+- Commercial terms remain confidential and are agreed individually in writing
+- No public technology-stack marketing
+- No unsupported performance or savings claims
+- The public demonstration is clearly labelled as synthetic and contains no client data
 
 ## Deployment
 
-The website can be deployed directly using **GitHub Pages**.
+Deploy all four files in this folder to the root of the existing website repository: `index.html`, `xlsx.full.min.js`, `README.md` and `CNAME`. The Excel checker will not work if `xlsx.full.min.js` is omitted. `CNAME` maps the site to `prataplabs.com`. There is no build step.
 
-Typical setup:
+The embedded report is published publicly. Do not place confidential, personal or client data in it. The browser speech feature starts only after the visitor presses Play.
 
-1. Keep `index.html` in the repository root.
-2. Go to **Settings → Pages**.
-3. Select **Deploy from a branch**.
-4. Choose the `main` branch and `/ (root)`.
-5. Save and allow GitHub Pages to deploy.
-6. Configure the custom domain as `prataplabs.com` if required.
+The file checker reads selected files in the visitor's browser. CSV and Excel workbook formats are supported. For workbooks, the first worksheet is assessed. This check reviews basic table structure only; it does not prove business accuracy, completeness or fitness for a decision.
 
-## Contact
+## Review boundary
 
-**Website:** https://prataplabs.com  
-**Email:** pratap@prataplabs.com  
-**GitHub:** https://github.com/pratapds
-
----
-
-© 2026 Pratap Labs  
-**Data Science • Machine Learning • Artificial Intelligence • Business Analysis • Research**
+The website has been edited to reduce obvious misleading-claim, privacy and unfair-commercial-term risks. This is not a legal opinion. Before launch, have qualified counsel review the signed service agreement, privacy notice, data-processing terms, tax position and any jurisdiction-specific advertising obligations.
