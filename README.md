@@ -12,8 +12,10 @@ Static, single-page website for the Pratap Labs Business and Data Science consul
 
 ## Public-positioning and compliance changes
 
-- No prices, fee ranges, engagement periods or public refund facility
-- Commercial terms remain confidential and are agreed individually in writing
+- What Pratap Labs would charge is provided privately for the agreed scope
+- Engagement terms remain confidential and are agreed individually in writing
+- Initial enquiries use a structured email so the business question, impact, decision, available data and requested support remain focused
+- Pratap Labs replies in writing with any necessary questions, the proposed scope, deliverables, data requirements, charge and next step
 - No public technology-stack marketing
 - No unsupported performance or savings claims
 - The public demonstration is clearly labelled as synthetic and contains no client data
