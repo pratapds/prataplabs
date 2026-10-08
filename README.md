@@ -1,6 +1,6 @@
 # Pratap Labs Website
 
-Static, single-page website for the Pratap Labs Business and Data Science consulting practice.
+Static, single-page website for the Pratap Labs Business Strategy and Data Science consulting practice.
 
 ## What is included
 
