@@ -1,20 +1,18 @@
-# Pratap Labs — Website
+# Pratap Labs — final website package
 
-Positioning: **Business Strategy and Data Science with AI Consulting**.
+A lightweight, responsive, static website for **Business Strategy & Data Science with AI Consulting**.
 
-This single-page static site targets international organisations. The copy places business strategy first, uses data science to support evidence-led decisions, and presents AI as a practical, selective capability.
+## Deployment
+Upload all files in this folder to the root of the GitHub Pages repository: `index.html`, `404.html`, `CNAME`, `robots.txt`, `sitemap.xml`, `favicon.svg`, and `social-preview.png`. Keep the CNAME value `prataplabs.com`. No build process or third-party JS required.
 
-## Deploy
+## Editorial decisions
+- Public-facing copy does not describe the target audience by employee count or use SME language.
+- Business Strategy & Data Science is the consulting identity; AI is used selectively.
+- All communication is by written email. No telephone, meeting, calendar, messaging, or contact form CTA.
+- Retail scenario is clearly illustrative; no fabricated client results or testimonials.
+- Design palette: Oxford navy, ivory, muted teal, subtle warm brass.
 
-Upload `index.html` and `CNAME` to the root of the GitHub Pages repository. No build step or XLSX library is required.
+## Pre-publication checks
+Confirm the email address is monitored; review scope, service and data-handling claims; verify your domain and email deliverability; test mailto links in your preferred email applications. Do not email confidential or personal data before an appropriate written agreement.
 
-## Included
-
-- Revised positioning, hero, business challenges, services, process, founder introduction and contact copy
-- Embedded public retail intelligence demonstration and browser-initiated narration
-- SEO/social metadata and professional-service structured data
-- Mobile layout and keyboard focus styling
-
-## Important
-
-The retail demonstration uses synthetic data and is not a client success claim. Review the founder's professional credentials and service descriptions before publishing. Test the live external embed, speech feature, navigation, and contact links in browsers. No confidential client data should be published.
+Static checks confirmed internal anchor targets and the presence of email-only contact links. Automated browser rendering was blocked by the testing environment, so desktop/mobile visual inspection, a Lighthouse audit, and actual email delivery testing are still recommended before publication.
