@@ -1,18 +1,23 @@
-# Pratap Labs — final website package
+# Pratap Labs — solutions-led website
 
-A lightweight, responsive, static website for **Business Strategy & Data Science with AI Consulting**.
+A lightweight, responsive static website positioning Pratap Labs around business problems, analytical solutions, decision benefits and a clear written engagement process.
 
-## Deployment
-Upload all files in this folder to the root of the GitHub Pages repository: `index.html`, `404.html`, `CNAME`, `robots.txt`, `sitemap.xml`, `favicon.svg`, and `social-preview.png`. Keep the CNAME value `prataplabs.com`. No build process or third-party JS required.
+## Publish through GitHub Pages
 
-## Editorial decisions
-- Public-facing copy does not describe the target audience by employee count or use SME language.
-- Business Strategy & Data Science is the consulting identity; AI is used selectively.
-- All communication is by written email. No telephone, meeting, calendar, messaging, or contact form CTA.
-- Retail scenario is clearly illustrative; no fabricated client results or testimonials.
-- Design palette: Oxford navy, ivory, muted teal, subtle warm brass.
+Upload every file in this folder to the repository root: `index.html`, `404.html`, `CNAME`, `robots.txt`, `sitemap.xml`, `favicon.svg`, and `social-preview.png`.
 
-## Pre-publication checks
-Confirm the email address is monitored; review scope, service and data-handling claims; verify your domain and email deliverability; test mailto links in your preferred email applications. Do not email confidential or personal data before an appropriate written agreement.
+Keep the `CNAME` value as `prataplabs.com`. No build step or third-party JavaScript is required.
 
-Static checks confirmed internal anchor targets and the presence of email-only contact links. Automated browser rendering was blocked by the testing environment, so desktop/mobile visual inspection, a Lighthouse audit, and actual email delivery testing are still recommended before publication.
+## Important editorial safeguards
+
+- The benefit section explains what an engagement delivers without inventing client counts, testimonials or success percentages.
+- The Retail Intelligence report is clearly labelled as an illustrative demonstration using synthetic data.
+- Fees are private and determined after scope is understood.
+- Refund and cancellation wording protects fees for work already performed or specifically committed, subject to applicable law.
+- Written email remains the primary communication method.
+- Visitors are told not to send confidential, personal or client data with the first enquiry.
+- A dedicated confidentiality section explains NDA readiness, data minimisation, pseudonymised identifiers, purpose limitation and agreed retention or deletion.
+
+## Before publishing
+
+Test all email buttons in the preferred mail application, check the embedded demonstration on desktop and mobile, and confirm that `pratap@prataplabs.com` is monitored.
